@@ -38,11 +38,10 @@ void print_list(Node* head) {
 int count_nodes(Node* head) {
         int count = 0;
         while (head != nullptr){
-            count = count + 1;
+            count ++;
             head = head->next;
         }
-        cout << "Count: " << count << endl;
-        return 0;
+        return count;
     }
 
 
@@ -64,13 +63,13 @@ int main() {
 
     print_list(head);
 
-    count_nodes(head);
+    cout << "Count: " << count_nodes(head) << endl;
 
     for (int i = 0; i < 2; i++) {
         head = remove_head(head);
         print_list(head);
     }
-    count_nodes(head);
+    cout << "Count: " << count_nodes(head) << endl;
 
     cout << "Contains 40? " << contains(head, 40) << endl;
     cout << "Contains 99? " << contains(head, 99) << endl;
